@@ -1,0 +1,28 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Track and Trace</title>
+</head>
+<body>
+	<div id="content"></div>
+
+<script type="text/javascript">
+    var content = document.getElementById('content');
+    var socket = new WebSocket('ws://localhost:1337');
+    socket.onopen = function () {
+      socket.send('hello from the client');
+    };
+
+    socket.onmessage = function (message) {
+      content.innerHTML += message.data +'<br />';
+    };
+
+    socket.onerror = function (error) {
+      console.log('WebSocket error: ' + error);
+    };
+</script>
+
+</body>
+</html>

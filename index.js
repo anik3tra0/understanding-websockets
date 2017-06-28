@@ -53,10 +53,7 @@ function handleConnection(conn) {
   }
 
   function onConnClose() {
-    var index = connections.indexOf(conn);
-    connections.splice(index, 1);
     console.log('connection from %s closed', remoteAddress);
-    console.log(connections);
   }
 
   function onConnError(err) {

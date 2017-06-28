@@ -10,7 +10,7 @@
 
 <script type="text/javascript">
     var content = document.getElementById('content');
-    var socket = new WebSocket('ws://localhost:1337');
+    var socket = new WebSocket('ws://139.59.65.73:1337');
     socket.onopen = function () {
       socket.send('hello from the client');
     };
